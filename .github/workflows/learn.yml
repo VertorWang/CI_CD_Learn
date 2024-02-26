@@ -17,4 +17,4 @@ jobs:
         run: echo "$env:Greeting $env:First_Name. Today is $env:DAY_OF_WEEK!"
         env:
           First_Name: Mona
-      - run: echo $env:GITHUB_ACTOR
+      - run: echo %GITHUB_ACTOR%
