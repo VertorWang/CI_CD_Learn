@@ -9,11 +9,14 @@ env:
 
 jobs:
   greeting_job:
-    runs-on: windows-latest
+    runs-on: ubuntu-18.04
     env:
       Greeting: Hello
     steps:
       - run: node --version
+      - run: lsb_release -a
+      - name: Check out repository code
+        uses: actions/checkout@v4
       - name: "Say Hello Mona it's Monday"
         run: echo "$env:Greeting $env:First_Name. Today is $env:DAY_OF_WEEK!"
         env:
